@@ -69,7 +69,7 @@ async function deleteProduction(id){
     const response = await fetch('backend/delete.php?id='+id)
     const result = await response.json()
     if(result?.success){
-        alert('Seu filme foi deletado com sucesso!')
+        alert('Seu livro foi deletado com sucesso!')
         loadProductions()
     }
 
@@ -105,7 +105,7 @@ async function edit(event){
     const result = await response.json()
     if(result?.success){
         closeAllModal()
-        alert('Seu filme '+result.data.titulo+' foi editado com sucesso!')
+        alert('Seu livro '+result.data.titulo+' foi editado com sucesso!')
         loadProductions()
     }
 }

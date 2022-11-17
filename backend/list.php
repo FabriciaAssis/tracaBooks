@@ -12,7 +12,6 @@
 
         header('Content-ype: text/json');
         echo json_encode($result);
-
     } catch (\PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
         }

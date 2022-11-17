@@ -1,5 +1,5 @@
 <?php
-    require(database.php);
+    require ('database.php');
 
     try{
         $id = '';
@@ -9,7 +9,7 @@
 
         $stmt = $conn->prepare("SELECT * FROM producoes WHERE id = :id");
         $stmt->bindParam(':id', $id);
-        $stmt->exeute();
+        $stmt->execute();
 
         $count = $stmt->rowCount();
 

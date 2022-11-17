@@ -8,11 +8,7 @@
     $capa = $_POST["capa"];
     $classificacao = $_POST["classificacao"];
 
-    // echo $titulo. "<br>";
-    // echo $descricao. "<br>";
-    // echo $categoria. "<br>";
-    // echo $capa. "<br>";
-    // echo $classificacao. "<br>";
+
 
     try {
         $stmt = $conn->prepare("INSERT INTO producoes (titulo, descricao, categoria, capa, classificacao)

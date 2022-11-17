@@ -10,6 +10,7 @@
     --grey-800:#FFEBFF; /* cor das letras do nav */
     --grey-1000:#fff; /* cor das letras de baixo e do hover*/
     --blur: #ffb5ab; /* barra em cima de tudo*/
+    --paste: #FDFD96; 
 
 }
 html, body *{
@@ -176,7 +177,7 @@ header{
 } */
 
 #productions .card-movie div div p{
-    color: var(--grey-1000);
+    color: var(--primary);
     margin: 0 0 5px 0;
 }
 
@@ -196,9 +197,12 @@ header{
 
 }
 
+#productions .card-movie div h2{
+    color: var(--primary);
+}
 
 #productions .card-movie div h2:hover{
-    color: var(--secundary);
+    color: var(--primary-dark);
 }
 
 #productions .card-movie div p{
