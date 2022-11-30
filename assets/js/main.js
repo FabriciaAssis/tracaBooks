@@ -29,7 +29,7 @@ async function insert(event){
     const result = await response.json()
     if(result?.success){
         closeAllModal()
-        alert('Seu filme '+result.data.titulo+' foi cadastrado com sucesso!')
+        alert('Seu livro '+result.data.titulo+' foi cadastrado com sucesso!')
         loadProductions()
     }
 }
@@ -40,21 +40,21 @@ async function loadProductions() {
     if(result?.success){
         const listProductions = document.querySelector('#productions')
         listProductions.innerHTML = ''
-        const filmes = result.data
-        filmes.map((film) => { //map é um laço de repeição
+        const livros = result.data
+        livros.map((book) => { //map é um laço de repeição
             listProductions.innerHTML += `
                 <div class="card-movie">
-                    <a href="filme">
-                        <img src="${film.capa}" alt="${film.titulo}">
+                    <a href="livro">
+                        <img src="${book.capa}" alt="${book.titulo}">
                     </a>
                     <div>
-                        <a href="filme">
-                            <h2>${film.titulo}</h2>
+                        <a href="livro">
+                            <h2>${book.titulo}</h2>
                         </a>
                         <div>
-                            <p>${film.categoria}</p>
-                            <img src="assets/img/trash-svgrepo-com.svg" alt="Apagar" onclick="deleteProduction(${film.id})"/>
-                            <img src="assets/img/edit-svgrepo-com.svg" alt="Editar" onclick="loadProductionData(${film.id})"/>
+                            <p>${book.categoria}</p>
+                            <img src="assets/img/trash-svgrepo-com.svg" alt="Apagar" onclick="deleteProduction(${book.id})"/>
+                            <img src="assets/img/edit-svgrepo-com.svg" alt="Editar" onclick="loadProductionData(${book.id})"/>
                         </div>
                     </div>
                 </div>
