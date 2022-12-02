@@ -174,11 +174,13 @@ header{
 /* #productions .card-movie div p{
     margin: 0 0 5px 0;
     color: var(--secundary);
+    direction: rtl;
 } */
 
 #productions .card-movie div div p{
     color: var(--primary);
     margin: 0 0 5px 0;
+    direction: rtl;
 }
 
 #productions .card-movie div div img{

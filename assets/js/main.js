@@ -52,7 +52,7 @@ async function loadProductions() {
                             <h2>${book.titulo}</h2>
                         </a>
                         <div>
-                            <p>${book.categoria}</p>
+                            <p>${book.genero}</p>
                             <img src="assets/img/trash-svgrepo-com.svg" alt="Apagar" onclick="deleteProduction(${book.id})"/>
                             <img src="assets/img/edit-svgrepo-com.svg" alt="Editar" onclick="loadProductionData(${book.id})"/>
                         </div>
@@ -83,9 +83,9 @@ async function loadProductionData(id){
         const title = document.querySelector('#modal-editar input[name=title]')
         title.value = result.data.titulo
         const description = document.querySelector('#modal-editar input[name=description]')
-        description.value = result.data.descricao
+        description.value = result.data.sinopse
         const category = document.querySelector('#modal-editar input[name=category]')
-        category.value = result.data.categoria
+        category.value = result.data.genero
         const cover = document.querySelector('#modal-editar input[name=cover]')
         cover.value = result.data.capa
         const classification = document.querySelector('#modal-editar input[name=classification]')
@@ -116,7 +116,7 @@ function clearForm(idModal) {
     const description = document.querySelector(`${idModal} input[name=description]```)
     description.value = ''
     const category = document.querySelector(`${idModal} input[name=category]`)
-    category.value = 'result.data.categoria'
+    category.value = 'result.data.genero'
     const cover = document.querySelector(`${idModal} input[name=cover]`)
     cover.value = ''
     const classification = document.querySelector(`${idModal} input[name=classification]`)

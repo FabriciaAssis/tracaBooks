@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `producoes` (
   `id` int(11) NOT NULL,
   `titulo` varchar(500) NOT NULL,
-  `descricao` text NOT NULL,
-  `categoria` varchar(200) NOT NULL,
+  `sinopse` text NOT NULL,
+  `genero` varchar(200) NOT NULL,
   `capa` varchar(600) NOT NULL,
   `classificacao` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -40,7 +40,7 @@ CREATE TABLE `producoes` (
 -- Extraindo dados da tabela `producoes`
 --
 
-INSERT INTO `producoes` (`id`, `titulo`, `descricao`, `categoria`, `capa`, `classificacao`) VALUES
+INSERT INTO `producoes` (`id`, `titulo`, `sinopse`, `genero`, `capa`, `classificacao`) VALUES
 (1, 'O Príncipe Cruel', 'Envolvida em intrigas e traições do palácio, Jude descobre sua própria capacidade para truques e derramamento de sangue. Mas, com a ameaça de uma guerra civil e o Reino das Fadas por um fio, Jude precisará arriscar sua vida em uma perigosa aliança para salvar suas irmãs, e o próprio Reino.', 'Fantasia Literaria', 'https://cdn.record.com.br/wp-content/uploads/2019/07/26012907/15457-600x889.jpeg', '14');
 
 --
