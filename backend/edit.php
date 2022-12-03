@@ -4,17 +4,15 @@
 
     $id = $_POST["id"];
     $titulo = $_POST["titulo"];
-    $sinopse = $_POST["sinopse"];
     $genero = $_POST["genero"];
     $capa = $_POST["capa"];
     $classificacao = $_POST["classificacao"];
 
     try {
-        $stmt = $conn->prepare("UPDATE INTO producoes SET titulo = :titulo, sinopse = :sinopse, genero = :genero, capa = :capa, classificacao = :classificacao WHERE id = :id");
+        $stmt = $conn->prepare("UPDATE INTO producoes SET titulo = :titulo, genero = :genero, capa = :capa, classificacao = :classificacao WHERE id = :id");
         
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':titulo', $titulo);
-        $stmt->bindParam(':sinopse', $sinopse);
         $stmt->bindParam(':genero', $genero);
         $stmt->bindParam(':capa', $capa);
         $stmt->bindParam(':classificacao', $classificacao);
@@ -28,7 +26,6 @@
 
             $result["data"]["id"] = $id;
             $result["data"]["titulo"] = $titulo;
-            $result["data"]["sinopse"] = $sinopse;
             $result["data"]["genero"] = $genero;
             $result["data"]["capa"] = $capa;
             $result["data"]["classificacao"] = $classificacao;

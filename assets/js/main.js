@@ -82,8 +82,6 @@ async function loadProductionData(id){
         showModal('#modal-editar')
         const title = document.querySelector('#modal-editar input[name=title]')
         title.value = result.data.titulo
-        const description = document.querySelector('#modal-editar input[name=description]')
-        description.value = result.data.sinopse
         const category = document.querySelector('#modal-editar input[name=category]')
         category.value = result.data.genero
         const cover = document.querySelector('#modal-editar input[name=cover]')
@@ -113,8 +111,6 @@ async function edit(event){
 function clearForm(idModal) {
     const title = document.querySelector(`${idModal} input[name=title]`)
     title.value = ''
-    const description = document.querySelector(`${idModal} input[name=description]```)
-    description.value = ''
     const category = document.querySelector(`${idModal} input[name=category]`)
     category.value = 'result.data.genero'
     const cover = document.querySelector(`${idModal} input[name=cover]`)
@@ -124,3 +120,6 @@ function clearForm(idModal) {
     const id = document.querySelector(`${idModal} input[name=id]`)
     id.value = ''
 }
+
+// pag comentários
+

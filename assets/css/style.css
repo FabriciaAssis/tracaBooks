@@ -1,8 +1,8 @@
 :root{
     --primary:  #bb8806/*#D09EFC*/; 
     --primary-dark: #F0CA6C; /* active em baixo da home*/
-    --secundary: #D09EFC; /* cor do btn*/
-    --secundary-dark: #b263f7; /*hover do btn*/
+    --secundary: #b263f7; /* cor do btn*/
+    --secundary-dark: #D09EFC; /*hover do btn*/
     --grey-0: #000;
     --grey-200: #C6E9EE ; /*cor do fundo da pag*/
      --grey-400: #F5F5F5 ; /* cor dos quadradinhos e do footer */
@@ -259,5 +259,49 @@ body > footer{
 }
 
 .modal .modal-body form button{
+    margin: 15px 0 0 0;
+}
+
+/* pagina de comentários */
+
+.modal-note{
+    background: #0c0c0c85;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    display: /*flex*/ none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+.modal-note .modal-body{
+    width: 600px;
+    border-radius: 15px;
+    background: var(--grey-1000);
+    color: var(--grey-0);
+    padding: 30px 20px;
+}
+
+.modal-note .modal-body form{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.modal-note .modal-body form label{
+    margin: 15px 0 0 0;
+}
+
+.modal-note .modal-body form input[type=text]{
+    height: 30px;
+    padding: 3px 5px;
+    border-radius: 10px;
+}
+
+.modal-note .modal-body form button{
     margin: 15px 0 0 0;
 }

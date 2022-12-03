@@ -65,7 +65,7 @@
             <nav id="main-nav">
                 <ul>
                     <li><a href="/tracaBooks/" class="active">Livros</a></li>
-                    <li><a href="/comentarios.html">Comentários</a></li>
+                    <li><a href="comentarios.html">Comentários</a></li>
                 </ul>
             </nav>
         </div>
@@ -173,6 +173,7 @@
             <h1>Adicionar Produção</h1>
             <form onsubmit="insert(event)">
                 <label>Título:</label>
+                <input type="text" name="titulo">
                 <label>genero:</label>
                 <input type="text" name="genero">
                 <label>Capa:</label>
@@ -188,8 +189,7 @@
             <h1>Editar Produção</h1>
             <form onsubmit="edit(event)">
                 <label>Título:</label>
-                <input type="text" name="titulo"><label>Sinopse:</label>
-                <input type="text" name="sinopse">
+                <input type="text" name="titulo">
                 <label>genero:</label>
                 <input type="text" name="genero">
                 <label>Capa:</label>
@@ -203,6 +203,9 @@
     </div>
 
     <footer>
+        <div>
+            
+        </div>
         <p>© Copyrigh 2022 BestFlix | Todos direitos Reservados</p>
         <p>Fabrícia Assis</p>
     </footer>
