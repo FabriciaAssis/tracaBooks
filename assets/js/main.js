@@ -43,7 +43,7 @@ async function loadProductions() {
         const livros = result.data
         livros.map((book) => { //map é um laço de repeição
             listProductions.innerHTML += `
-                <div class="card-movie">
+                <div class="card-book">
                     <a href="livro">
                         <img src="${book.capa}" alt="${book.titulo}">
                     </a>

@@ -142,7 +142,7 @@ header{
     justify-content: flex-start;
     flex-wrap: wrap;
 }
-#productions .card-movie{
+#productions .card-book{
     width: 235px;
     min-height: 400px;
     background: var(--grey-400);
@@ -151,63 +151,62 @@ header{
     position: relative;
 }
 
-#productions .card-movie a .mask{
+#productions .card-book a .mask{
     position: absolute;
     background-color: #00000036;
 }
 
-#productions .card-movie img{
+#productions .card-book img{
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-#productions .card-movie > div{
+#productions .card-book > div{
     padding: 10px;
 }
 
-#productions .card-movie div h2{
+#productions .card-book div h2{
     margin: 0 0 5px 0;
     color: var(--grey-1000);
 }
 
-/* #productions .card-movie div p{
+#productions .card-book div p{
     margin: 0 0 5px 0;
     color: var(--secundary);
-    direction: rtl;
-} */
-
-#productions .card-movie div div p{
-    color: var(--primary);
-    margin: 0 0 5px 0;
-    direction: rtl;
+    text-align: end;
 }
 
-#productions .card-movie div div img{
+#productions .card-book div div p{
+    color: var(--primary);
+    margin: 0 0 5px 0;
+}
+
+#productions .card-book div div img{
     width:22px;
     height: 22px;
     cursor: pointer;
     color: var(--secundary);
 }
 
-#productions .card-movie div div{
+#productions .card-book div div{
     display: flex;
 }
 
-#productions .card-movie div div img:nth-child(2){
+#productions .card-book div div img:nth-child(2){
     margin-left: auto;
 
 }
 
-#productions .card-movie div h2{
+#productions .card-book div h2{
     color: var(--primary);
 }
 
-#productions .card-movie div h2:hover{
+#productions .card-book div h2:hover{
     color: var(--primary-dark);
 }
 
-#productions .card-movie div p{
+#productions .card-book div p{
     margin: 0 0 5px 0;
     color: var(--primary);
 }
