@@ -123,3 +123,111 @@ function clearForm(idModal) {
 
 // pag comentários
 
+function showModalNote(idModal){
+    const modal = document.querySelector(idModal)
+    modal.style.display = 'flex'
+}
+
+function hideModalNote(idModal, event){
+    if(event.target.className === 'modal'){
+            const modal = document.querySelector(idModal)
+            modal.style.display = 'none'
+
+    }
+}
+
+
+function closeNoteAllModal(){
+    const modais = document.querySelectorAll('.modal-note')
+    modais.forEach(modal => {
+        modal.style.display = 'none'
+
+    })
+}
+
+async function insertNote(event){
+    event.preventDefault()
+    const formData = new FormData(event.target) 
+    const response = await fetch('backend/insertNote.php', {
+        method: 'POST',
+        body: formData
+    })
+    const result = await response.json()
+    if(result?.success){
+        closeNoteAllModal()
+        alert('Seu comentário '+result.data.nome+' foi postado com sucesso!')
+        loadNote()
+    }
+}
+
+async function loadNote() {
+    const response = await fetch('backend/listNote.php')
+    const result = await response.json()
+    if(result?.success){
+        const listNotes = document.querySelector('#notes')
+        listNotes.innerHTML = ''
+        const livros = result.data
+        livros.map((book) => { 
+            listNotes.innerHTML += `
+                <div class="card-note">
+                    <div>
+                        <a href="comentario">
+                            <h2>${note.nome}</h2>
+                        </a>
+                        <div>
+                            <p>${note.comentario}</p>
+                            <img src="assets/img/trash-svgrepo-com.svg" alt="Apagar" onclick="deleteProduction(${note.id})"/>
+                            <img src="assets/img/edit-svgrepo-com.svg" alt="Editar" onclick="loadProductionData(${note.id})"/>
+                        </div>
+                    </div>
+                </div>
+        `
+        })
+    }else{
+        alert('Erro ao carregar comentário')
+    }
+}
+
+async function deleteNote(id){
+    const response = await fetch('backend/deleteNote.php?id='+id)
+    const result = await response.json()
+    if(result?.success){
+        alert('Seu comentário foi deletado com sucesso!')
+        loadNote()
+    }
+
+}
+
+async function loadNoteData(id){
+    const response = await fetch('backend/get-notes-by-id.php?id='+id)
+    const result = await response.json()
+    if(result?.success){
+        showModal('#modal-note-editar')
+        const nome = document.querySelector('#modal-note-editar input[name=nome]')
+        nome.value = result.data.nome
+        const comentario = document.querySelector('#modal-note-editar input[name=comentario]')
+        comentario.value = result.data.comentario
+    }
+
+}
+async function editNote(event){
+    event.preventDefault()
+    const formData = new FormData(event.target) 
+    const response = await fetch('backend/editNote.php', { 
+        method: 'POST',
+        body: formData
+    })
+    const result = await response.json()
+    if(result?.success){
+        closeNoteAllModal()
+        alert('O comentário de '+result.data.nome+' foi editado com sucesso!')
+        loadNote()
+    }
+}
+
+function clearFormNote(idModal) {
+    const nome = document.querySelector(`${idModal} input[name=nome]`)
+    nome.value = ''
+    const comentario = document.querySelector('#modal-note-editar input[name=comentario]')
+    comentario.value = ''
+}

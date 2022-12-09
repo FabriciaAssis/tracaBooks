@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="loadNote()">
     <header>
         <div class="container main-header">
             <a href="/tracaBooks/">
@@ -80,43 +80,39 @@
             </div>
             <header id="content-header" class="container flex-sb">
                 <div class="bradcrump"></div>
-                <button onclick="showModal('#modal-note')">Comece a Escrever</button>
+                <button onclick="showModalNote('#modal-note')">Comece a Escrever</button>
             </header>
-            <article id="productions-note">
-                <div class="card-book">
+            <article id="notes">
+                <div class="card-note">
                 </div>
 
-                <div class="card-book">
+                <div class="card-note">
                 </div>
-                <div class="card-book">
+                <div class="card-note">
                 </div>
 
             </article>
         </section>
     </main>
 
-    <div class="modal-note" id="modal-note" onclick="hideModal('#modal-note', event)">
+    <div class="modal-note" id="modal-note" onclick="hideModalNote('#modal-note', event)">
         <div class="modal-body">
             <h1>Fazer Comentário</h1>
-            <form onsubmit="insert(event)">
+            <form onsubmit="insertNote(event)">
                 <label>Nome:</label>
                 <input type="text" name="titulo" placeholder="Escreva seu nome ou pode ser um apelido ">
-                <label>Imagens:</label>
-                <input type="file">
                 <label>Texto:</label>
                 <input type="text" name="capa">
                 <button type="submit">Postar</button>
             </form>
         </div>
     </div>
-    <div class="modal-note" id="modal-note-editar" onclick="hideModal('#modal--note-editar', event)">
+    <div class="modal-note" id="modal-note-editar" onclick="hideModal('#modal-note-editar', event)">
         <div class="modal-note-body">
             <h1>Editar Produção</h1>
             <form onsubmit="edit(event)">
                 <label>Nome:</label>
                 <input type="text" name="titulo" placeholder="Escreva seu nome ou pode ser um apelido ">
-                <label>Imagens:</label>
-                <input type="file">
                 <label>Texto:</label>
                 <input type="text" name="capa">
                 <button type="submit">Corrigir</button>
